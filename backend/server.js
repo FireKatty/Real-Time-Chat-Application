@@ -1,17 +1,29 @@
 const express = require("express")
 const dotenv = require('dotenv')
 const cookieParser = require("cookie-parser")
-
+const cors = require('cors')
+const path = require('path')
 
 
 const authRoutes = require('./routes/authroutes')
 const messageRoutes = require('./routes/messageroutes')
 const userRoutes = require("./routes/userroutes")
 
-const app = express();
-// const port = process.env.port || 5000
 
 const connectToDatabase = require("./db/connectDatabase")
+const {app,server} = require("./socket/socket")
+
+// const PORT = process.env.PORT || 5432'
+
+// const __dirname = path.resolve();
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true // Allow credentials (cookies, authorization headers, TLS client certificates)
+};
+  
+app.use(cors(corsOptions));
+  
 
 dotenv.config();
 
@@ -19,16 +31,20 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 
-// app.get('/',(req,res)=>{
-//     res.send({error:'hello'})
-//     console.log("hello")
-// })
+
 
 app.use('/api/auth',authRoutes);
-app.use("/api/message",messageRoutes);
+app.use("/api/messages",messageRoutes);
 app.use("/api/users",userRoutes);
 
-app.listen(5432,()=>{
+// app.use(express.static(path.join(__dirname,"/frontend/dist")))
+
+// app.get("*",(req,res)=>{
+//     res.sendFile(path.join(__dirname,"frontend","dist","index.html"));
+// })
+
+
+server.listen(5432,()=>{
     connectToDatabase();
     console.log('Server is Started')
 })
