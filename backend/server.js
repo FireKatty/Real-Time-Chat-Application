@@ -5,6 +5,8 @@ const cors = require('cors')
 const path = require('path')
 
 
+const port  = process.env.port
+// console.log(port)
 const authRoutes = require('./routes/authroutes')
 const messageRoutes = require('./routes/messageroutes')
 const userRoutes = require("./routes/userroutes")
@@ -13,7 +15,7 @@ const userRoutes = require("./routes/userroutes")
 const connectToDatabase = require("./db/connectDatabase")
 const {app,server} = require("./socket/socket")
 
-// const PORT = process.env.PORT || 5432'
+// const PORT = process.env.PORT || 5432;
 
 // const __dirname = path.resolve();
 const corsOptions = {
@@ -44,7 +46,7 @@ app.use("/api/users",userRoutes);
 // })
 
 
-server.listen(5432,()=>{
+server.listen(port,()=>{
     connectToDatabase();
-    console.log('Server is Started')
+    console.log('Server is Started',port)
 })
