@@ -9,7 +9,7 @@ const useLogout = () => {
   const logout = async()=>{
     setLoading(true);
     try {
-        const res = await fetch("http://localhost:5432/api/auth/logout", {
+        const res = await fetch("https://real-time-chat-application-3h5v.onrender.com/api/auth/logout", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
         });

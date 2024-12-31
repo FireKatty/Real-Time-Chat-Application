@@ -46,7 +46,7 @@ const useGetConversations = () => {
       setLoading(true);
       try {
         const token = localStorage.getItem("jwt");
-        const res = await fetch("http://localhost:5432/api/users", {
+        const res = await fetch("https://real-time-chat-application-3h5v.onrender.com/api/users", {
           headers: {
             "Authorization": token,
             "Content-Type": "application/json",
