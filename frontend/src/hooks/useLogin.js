@@ -23,6 +23,7 @@ const useLogin = () => {
         if (data.error){
             throw new Error(data.error)
         }
+        console.log(data.token)
         localStorage.setItem("jwt", data.token);
         console.log(data.token);
         localStorage.setItem("chat-user",JSON.stringify(data))
