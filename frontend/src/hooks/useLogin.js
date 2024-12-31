@@ -13,7 +13,7 @@ const useLogin = () => {
 
     setLoading(true)
     try {
-        const res = await fetch("http://localhost:5432/api/auth/login", {
+        const res = await fetch("http://localhost:9876/api/auth/login", {
             method :"POST",
             headers : {"Content-Type" : "application/json"},
             body : JSON.stringify({userName,password})

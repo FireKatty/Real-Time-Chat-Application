@@ -31,13 +31,14 @@ const signup = async(req,res)=>{
         })
 
         if (newUser){
-            generateTokenAndSetCookie(newUser._id,res);
+            const token = generateTokenAndSetCookie(newUser._id,res);
             await newUser.save();
             res.status(201).json({
                 _id:newUser._id,
                 fullName:newUser.fullName,
                 userName:newUser.userName,
-                profilePic:newUser.profilePic
+                profilePic:newUser.profilePic,
+                token
             })
         }else{
             res.status(400).json({

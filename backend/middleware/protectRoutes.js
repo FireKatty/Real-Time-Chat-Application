@@ -2,9 +2,11 @@ const jwt = require ("jsonwebtoken");
 const User = require("../models/userModel");
 
 const protectRoute = async (req, res, next) => {
+	console.log("JWT")
 	try {
         // console.log(req)
 		const token = req.headers["authorization"];
+		console.log(token)
         // console.log(token)
 		if (!token) {
 			return res.status(401).json({ error: "Unauthorized - No Token Provided" });

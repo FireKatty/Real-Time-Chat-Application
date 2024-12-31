@@ -15,7 +15,8 @@ const userRoutes = require("./routes/userroutes")
 const connectToDatabase = require("./db/connectDatabase")
 const {app,server} = require("./socket/socket")
 
-const PORT = process.env.PORT || 5432;
+const PORT = 9876;
+// console.log(process.env.PORT)
 
 // const __dirname = path.resolve();
 const corsOptions = {
