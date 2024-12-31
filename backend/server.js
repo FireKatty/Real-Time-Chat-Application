@@ -20,7 +20,7 @@ const PORT = 9876;
 
 // const __dirname = path.resolve();
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: 'https://real-time-chat-application-h51k-p2kersqu1.vercel.app/',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true // Allow credentials (cookies, authorization headers, TLS client certificates)
 };
