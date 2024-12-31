@@ -70,7 +70,7 @@ const { app, server } = require("./socket/socket");
 
 dotenv.config();
 
-const PORT = process.env.PORT;  // Use environment variable for port
+const PORT = process.env.PORT || 9876;  // Use environment variable for port
 
 // CORS Configuration
 app.use(
