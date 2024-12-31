@@ -75,11 +75,16 @@ const PORT = process.env.PORT || 9876;  // Use environment variable for port
 // CORS Configuration
 app.use(
   cors({
-    origin: ['https://real-time-chat-application-h51k-p2kersqu1.vercel.app', 'http://localhost:3000'], // Add localhost for local testing
+    origin: [
+      'https://real-time-chat-application-h51k-p2kersqu1.vercel.app',
+      'http://localhost:3000'  // For local testing
+    ], 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization'], // Add any specific headers needed
   })
 );
+
 
 app.use(express.json());
 app.use(cookieParser());
