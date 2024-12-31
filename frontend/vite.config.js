@@ -4,12 +4,10 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server:{
+  server: {
     port: 3000,
   },
-  // proxy:{
-  //   "/api":{
-  //     target:"https://real-time-chat-application-ilv4.onrender.com"
-  //   }
-  // }
+  build: {
+    outDir: 'build', // Specify the output directory as 'build'
+  },
 })
