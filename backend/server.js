@@ -19,13 +19,15 @@ const PORT = 9876;
 // console.log(process.env.PORT)
 
 // const __dirname = path.resolve();
-const corsOptions = {
-    origin: 'https://real-time-chat-application-h51k-p2kersqu1.vercel.app/',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true // Allow credentials (cookies, authorization headers, TLS client certificates)
-};
+app.use(
+    cors({
+      origin: ['https://real-time-chat-application-h51k-p2kersqu1.vercel.app'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific methods
+      credentials: true, // Allow cookies or authentication headers
+    })
+);
   
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
   
 
 dotenv.config();
