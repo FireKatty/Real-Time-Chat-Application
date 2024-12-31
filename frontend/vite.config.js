@@ -9,7 +9,7 @@ export default defineConfig({
   },
   proxy:{
     "/api":{
-      target:"http://localhost:9876"
+      target:"https://real-time-chat-application-ilv4.onrender.com"
     }
   }
 })

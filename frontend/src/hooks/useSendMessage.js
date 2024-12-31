@@ -10,7 +10,7 @@ const useSendMessage = () => {
 		setLoading(true);
 		try {
 			const token = localStorage.getItem("jwt");
-			const res = await fetch(`http://localhost:9876/api/messages/send/${selectedConversation._id}`, {
+			const res = await fetch(`https://real-time-chat-application-ilv4.onrender.com/api/messages/send/${selectedConversation._id}`, {
 				method: "POST",
 				headers: {
 					"Authorization": token,

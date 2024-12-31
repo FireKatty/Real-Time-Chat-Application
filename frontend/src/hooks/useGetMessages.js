@@ -12,7 +12,7 @@ const useGetMessages = () => {
 			try {
                 console.log("req params",selectedConversation._id)
 				const token = localStorage.getItem("jwt");
-				const res = await fetch(`http://localhost:9876/api/messages/${selectedConversation._id}`, {
+				const res = await fetch(`https://real-time-chat-application-ilv4.onrender.com/api/messages/${selectedConversation._id}`, {
 				headers: {
 					"Authorization": token,
 					"Content-Type": "application/json",
