@@ -7,9 +7,9 @@ export default defineConfig({
   server:{
     port: 3000,
   },
-  proxy:{
-    "/api":{
-      target:"https://real-time-chat-application-ilv4.onrender.com"
-    }
-  }
+  // proxy:{
+  //   "/api":{
+  //     target:"https://real-time-chat-application-ilv4.onrender.com"
+  //   }
+  // }
 })
